@@ -3,18 +3,13 @@
 import React, { ReactNode } from 'react'
 import { registerMicroApps, start } from 'qiankun';
 
+import MicroApps from '@/common/microApps';
+
 type Props = {
   children: ReactNode
 }
 
-registerMicroApps([
-  {
-    name: 'reactApp',
-    entry: 'http://localhost:3001',
-    container: '#subapp-container',
-    activeRule: '/react-app'
-  }
-])
+registerMicroApps(MicroApps)
 
 start();
 
@@ -23,13 +18,13 @@ export default function BasicsLayout(props: Props) {
   const { children } = props
 
   return (
-    <div>
+    <div className='w-full h-screen'>
       <div>BasicsLayout header</div>
       <div>
         BasicsLayout content
         {children}
       </div>
-      <div>BasicsLayout footer</div>
+      <div>BasicsLayout footer</div>  
     </div>
   )
 }

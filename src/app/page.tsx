@@ -10,8 +10,6 @@ export default function Home() {
   return (
     <main className="min-h-56 bg-pink-50 text-center pt-8">
       父应用page
-
-      <div id="subapp-container">子组件</div>
     </main>
   )
 }
