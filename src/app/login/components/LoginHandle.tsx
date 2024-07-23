@@ -28,7 +28,7 @@ const ButtonCustom = styled.button`
 
 export default function LoginHandle() {
 
-  const SET_TOKEN = useAppStore(state => state.SET_TOKEN)
+  const { token, SET_TOKEN } = useAppStore(state => state)
 
   const router = useRouter()
 
@@ -41,6 +41,7 @@ export default function LoginHandle() {
   return (
     <div>
       <ButtonCustom onClick={login}>登陆</ButtonCustom>
+      <div>{token}</div>
     </div>
   )
 }
