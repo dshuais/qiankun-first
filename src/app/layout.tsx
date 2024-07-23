@@ -8,9 +8,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { AntdRegistry } from '@ant-design/nextjs-registry'
-import NavigationEvents from "@/components/NavigationEvents";
+
 import StyledComponentsRegistry from '@/lib/registry'
+import NavigationEvents from "@/components/NavigationEvents";
 import Loading from "./loading";
+import BasicsLayout from "@/layouts/basics";
+
 import "../asstes/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -27,7 +30,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <AntdRegistry>
           {/* 避免styled-components首屏没有样式 */}
           <StyledComponentsRegistry>
-            {children}
+            <BasicsLayout>
+              {children}
+            </BasicsLayout>
           </StyledComponentsRegistry>
         </AntdRegistry>
 
