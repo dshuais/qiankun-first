@@ -3,15 +3,15 @@
 import React, { ReactNode } from 'react'
 import { registerMicroApps, start } from 'qiankun';
 
-import MicroApps from '@/common/microApps';
+import MicroApps, { microConfig, microAppLifeCycles } from '@/common/microApps';
 
 type Props = {
   children: ReactNode
 }
 
-registerMicroApps(MicroApps)
+registerMicroApps(MicroApps, microAppLifeCycles)
 
-start();
+start(microConfig);
 
 export default function BasicsLayout(props: Props) {
 

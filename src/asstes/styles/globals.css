@@ -62,3 +62,7 @@
   height: 0;
   color: transparent !important;
 }
+
+.read-the-docs {
+  color: red;
+}
